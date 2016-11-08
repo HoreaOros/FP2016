@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+
 
 namespace Agregare
 {
@@ -24,7 +26,8 @@ namespace Agregare
             {
                 vector[i] = rnd.Next(1, 101); // [1,100]
             }
-
+            Debug.WriteLine("Lungimea vecorului este: {0}", vector.Length);
+            
             AfisareVector(vector);
 
             // care este cel mai mare numar?
@@ -45,12 +48,53 @@ namespace Agregare
             Console.WriteLine("Media artimetica a numerelor este: {0:F4}", mediaAritmetica);
 
             // ordonam crescator lista numerele 
+            //BubbleSort(vector);
+            //AfisareVector(vector);
+
+            BubbleSort2(vector);
+            AfisareVector(vector);
 
 
 
+        }
 
+        private static void BubbleSort2(int[] vector)
+        {
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                for (int j = i + 1; j < vector.Length; j++)
+                {
+                    if (vector[i] > vector[j])
+                    {
+                        Swap(vector, i, j);
+                    }
+                }
+            }
+        }
 
+        private static void BubbleSort(int[] vector)
+        {
+            bool sortat = true;
+            
+            do
+            {
+                sortat = true;
+                for (int i = 0; i < vector.Length - 1; i++)
+                {
+                    if (vector[i] > vector[i + 1])
+                    {
+                        Swap(vector, i, i + 1);
+                        sortat = false;
+                    }
+                }
+            } while (!sortat);
+        }
 
+        private static void Swap(int[] vector, int i, int j)
+        {
+            int aux = vector[i];
+            vector[i] = vector[j];
+            vector[j] = aux;
         }
 
         private static int Suma(int[] vector)
@@ -59,7 +103,7 @@ namespace Agregare
 
             for (int i = 0; i < vector.Length; i++)
             {
-                suma += vector[i];
+                suma += vector[i]; // suma = suma + vector[i];
             }
 
             return suma;

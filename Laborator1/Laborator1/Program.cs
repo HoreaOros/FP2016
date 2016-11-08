@@ -31,6 +31,50 @@ namespace Laborator1
             int minim = CifraMinima(n);
             Console.WriteLine("Cea mai mica cifra a numarului {0} este {1}", n, minim);
 
+
+            // sa se determine oglinditul unui numar natural 
+            // ex. pentru n = 123 oglindit(123) = 321;
+            int oglindit = Oglindit(n);
+            Console.WriteLine("Oglinditul lui {0} este {1}", n, oglindit);
+
+
+            // sa se determine daca un numar este palindrom (numar egal cu oglinditul sau)
+            // 121 este palindrom, 123 nu este palindrom
+
+            if (Palindrom(n))
+            {
+                Console.WriteLine("Numarul {0} este palindrom", n);
+            }
+            else
+            {
+                Console.WriteLine("Numarul {0} NU este palindrom", n);
+            }
+        }
+
+        private static bool Palindrom(int n)
+        {
+            if (n == Oglindit(n))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static int Oglindit(int n)
+        {
+            int oglindit = 0;
+            int c;
+            while (n > 0)
+            {
+                c = n % 10;
+                oglindit = oglindit * 10 + c;
+                n = n / 10;
+            }
+
+            return oglindit;
         }
 
         private static int CifraMinima(int n)
