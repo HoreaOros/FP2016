@@ -32,6 +32,28 @@ namespace Laborator2
                     string s = Anotimp(d, m);
                     Console.WriteLine("Ziua {0}.{1} este in anotimpul {2}", d, m, s);
                 }
+
+
+            // Experiment cu un zar;
+            Zar1();
+        }
+
+        private static void Zar1()
+        {
+            Random rnd = new Random();
+
+            int[] zar = new int[6]; // cele 6 elemente ale vectorului sunt initializate la 0
+            int a;
+            for (int i = 0; i < 1000000; i++)
+            {
+                a = rnd.Next(0, 6);
+                zar[a]++;
+            }
+
+            for (int i = 0; i < zar.Length; i++)
+            {
+                Console.WriteLine("{0} -  {1}", i + 1, zar[i]);
+            }
         }
 
         private static string Anotimp(int d, int m)
