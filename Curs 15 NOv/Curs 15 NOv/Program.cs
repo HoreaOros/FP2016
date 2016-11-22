@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -115,9 +116,13 @@ namespace Curs_15_NOv
 
         private static void Fast2Sum(int[] v, int t)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            DateTime start = DateTime.Now;
+
             Array.Sort(v);
             int contor = 0;
-            DateTime start = DateTime.Now;
+            
             Console.WriteLine("Working...");
             for (int i = 0; i < v.Length; i++)
             {
@@ -128,6 +133,8 @@ namespace Curs_15_NOv
                 }
             }
             Console.WriteLine("Done. Yuppi.");
+            sw.Stop();
+            
             DateTime stop = DateTime.Now;
             Console.WriteLine("Am gasit {0} perechi a caror suma este {1}", contor, t);
             Console.WriteLine("Executia a durat: {0}", stop.Subtract(start).TotalSeconds);
