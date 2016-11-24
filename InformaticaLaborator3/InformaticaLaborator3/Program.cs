@@ -22,6 +22,12 @@ namespace InformaticaLaborator3
             {
                 Console.WriteLine(args[i]);
             }
+            f() ;
+        }
+
+        private static void f()
+        {
+            throw new NotImplementedException();
         }
 
         private static int PowFast(int a, int k, int n)
