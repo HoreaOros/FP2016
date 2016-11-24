@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// laborator 3 24.11.2016
 namespace InformaticaLaborator3
 {
     class Program
