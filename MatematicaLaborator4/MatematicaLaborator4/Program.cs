@@ -18,7 +18,7 @@ namespace MatematicaLaborator4
 
             // Uragan();
 
-            Gimnastica();
+            Gimnastica();s
 
             Monede();
 
