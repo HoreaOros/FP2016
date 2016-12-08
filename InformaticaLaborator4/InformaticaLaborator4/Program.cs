@@ -25,6 +25,11 @@ namespace InformaticaLaborator4
             // RandomWalk (Snake)
         }
 
+        private static void Reverse()
+        {
+            throw new NotImplementedException();
+        }
+
         private static void Erathostene()
         {
             int n = 100;
